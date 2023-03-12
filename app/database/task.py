@@ -15,7 +15,7 @@ def output_formatter(results):
 
 def scan():
     conn = get_db()
-    cursor = conn.execute("SELECT * FROM TASK", ())
+    cursor = conn.execute("SELECT * FROM task", ())
     results = cursor.fetchall()
     cursor.close()
     conn.close()
@@ -23,7 +23,7 @@ def scan():
 
 def select_by_id(pk):
     conn = get_db()
-    cursor = conn.execute("SELECT * FROM task WHERE id=?", (pk))
+    cursor = conn.execute("SELECT * FROM task WHERE id=?", (pk,))
     results = cursor.fetchall()
     cursor.close()
     conn.close()
